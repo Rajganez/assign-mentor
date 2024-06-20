@@ -57,7 +57,3 @@
 1. Displaying previously assigned Mentor for a particular Student 
 
 
-
-# ganez146
-# DHyusYn2qYE4q8Yq
-mongodb+srv://ganez146:DHyusYn2qYE4q8Yq@cluster0.hmetq1k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
