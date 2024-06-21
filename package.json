@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "express-server": "node --watch express-server.js" 
+    "express-server": "node --watch express-server.js"
   },
   "type": "module",
   "author": "Rajganesh",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongodb": "^6.7.0"
   }

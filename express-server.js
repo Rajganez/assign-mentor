@@ -6,10 +6,13 @@ import assigningRouter from "./routes/assignStudent.js";
 import changeMentorRouter from "./routes/changeMentor.js";
 import stuForMentorRouter from "./routes/displayStudents.js";
 import prevMentorRouter from "./routes/previousmentor.js";
+import {cors} from "./cors"  
 
 const app = express();
 await connectToDB();
+app.use(cors());
 app.use(express.json());
+
 
 app.use("/students", studentRouter);
 app.use("/mentors", mentorRouter);
