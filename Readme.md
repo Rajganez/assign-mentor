@@ -5,7 +5,15 @@
 
 **With the below Following End Points API is created**
 
-*"/mentor"*
+*"/students"*
+
+* Displays all Students in the database
+
+*"/mentors"*
+
+* Displays all Mentors in the database
+
+*"/addmentor"*
 
 * Mentor Name
 * Mentor ID (Primary Key)
@@ -17,7 +25,7 @@
 * StudentID (Foreign Key)
 * Display students (Add a button)
 
-*"/Student*
+*"/addstudent*
 
 * Student ID (Primary Key)
 * Student Name

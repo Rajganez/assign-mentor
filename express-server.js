@@ -6,7 +6,9 @@ import assigningRouter from "./routes/assignStudent.js";
 import changeMentorRouter from "./routes/changeMentor.js";
 import stuForMentorRouter from "./routes/displayStudents.js";
 import prevMentorRouter from "./routes/previousmentor.js";
-import cors from 'cors';
+import addStudentRouter from "./routes/addStudent.js";
+import addMentorRouter from "./routes/addMentor.js";
+import cors from "cors";
 
 const app = express();
 await connectToDB();
@@ -19,6 +21,8 @@ app.use("/assignstudent", assigningRouter);
 app.use("/changementor", changeMentorRouter);
 app.use("/displaystudents", stuForMentorRouter);
 app.use("/previousmentor", prevMentorRouter);
+app.use("/addstudent", addStudentRouter);
+app.use("/addmentor", addMentorRouter);
 
 const port = 8000;
 app.listen(port, () => {
