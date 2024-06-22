@@ -3,11 +3,14 @@ import { stuCollections } from "./students.js";
 
 const addStudentRouter = express.Router();
 
-
-addStudentRouter.get("/", async (req, res) => {
+addStudentRouter.post("/", async (req, res) => {
+  const payload = req.body;
   try {
-    const students = await stuCollections.find({}).toArray();
-    res.status(200).send({ msg: "Total Students", students });
+    await stuCollections.insertOne({
+      ...payload,
+      StudentID: Date.now().toString(),
+    });
+    res.status(201).send({ msg: "Success! Student has been added" });
   } catch (error) {
     res.status(500).send({ msg: "Server error: " + error.message });
   }

@@ -3,11 +3,16 @@ import { mentorCollection } from "./mentors.js";
 
 const addMentorRouter = express.Router();
 
-addMentorRouter.get("/", async (req, res) => {
+addMentorRouter.post("/", async (req, res) => {
+  const payload = req.body;
   try {
-    const mentors = await mentorCollection.find({}).toArray();
-    res.status(200).send({ msg: "Total Mentors", mentors });
+    await mentorCollection.insertOne({
+      ...payload,
+      MentorID: Date.now().toString(),
+    });
+    res.status(201).send({ msg: "Success! Mentor has been added" });
   } catch (error) {
+    console.error(error);
     res.status(500).send({ msg: "Server error: " + error.message });
   }
 });
