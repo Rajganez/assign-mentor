@@ -1,9 +1,12 @@
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
-const dbName = "HTT"
-const dbUser = "ganez146";
-const dbPassword = "DHyusYn2qYE4q8Yq";
-const dbCluster = "cluster0.hmetq1k.mongodb.net";
+dotenv.config();
+
+const dbName = process.env.DB_Name || "";
+const dbUser = process.env.DB_User || "";
+const dbPassword = process.env.DB_Pass || "";
+const dbCluster = process.env.DB_Cluster || "";
 const dbUrl = `mongodb+srv://${dbUser}:${dbPassword}@${dbCluster}/?retryWrites=true&w=majority&appName=Cluster0`;
 
 const client = new MongoClient(dbUrl);
