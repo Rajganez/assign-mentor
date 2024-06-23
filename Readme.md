@@ -20,23 +20,17 @@
 * Mentor Proficiency
 * Email
 * Experience
-* Teaching Information
-* Add Students (Add a button)
-* StudentID (Foreign Key)
-* Display students (Add a button)
+* Teaching_Exp
 
 *"/addstudent*
 
 * Student ID (Primary Key)
-* Student Name
-* Student Phone
-* Email
+* Name
+* Phone
 * Degree
-* Previous Course details
-* Previous Mentor information
+* Joinee (new or already completed a course in instituition)
+* Previous_Mentor (ID) 
 * Mentor id (Student assigned to mentor)
-* Change mentor (Add a button)
-
 
 **Assigning Students to Mentor**
 *"/assignstudent/:MentorID"*
@@ -64,4 +58,7 @@
 
 1. Displaying previously assigned Mentor for a particular Student 
 
-* https://assign-mentor-rwbp.onrender.com/
+## API URL:
+
+**Below API URL to use with above API endpoints**
+* https://assign-mentor-rwbp.onrender.com

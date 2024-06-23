@@ -33,7 +33,9 @@ assigningRouter.patch("/:mentorID", async (req, res) => {
       { StudentID: studentId },
       { $set: { MentorID: mentorId } }
     );
-    res.status(200).send({ msg: `Student ${stu.Name} assigned to`, ment });
+    res
+      .status(200)
+      .send({ msg: `Student ${stu.Name} assigned to ${ment.Name}`, ment });
   } catch (error) {
     res.status(500).send({ msg: "Server error: " + error.message });
   }
