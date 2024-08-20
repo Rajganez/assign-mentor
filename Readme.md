@@ -1,78 +1,74 @@
-## Title
-**Mentor and Student Assigning with Database**
+# Mentor and Student Assigning with Database
 
 ## Description
 
-**With the below Following End Points API is created**
+This project provides a robust API for managing mentors and students in an educational institution's database. Below are the available endpoints and their functionalities.
 
-*"/students"*
+### Endpoints
 
-* Displays all Students in the database
+#### 1. **`/students`**
+   - Displays all students in the database.
 
-*"/mentors"*
+#### 2. **`/mentors`**
+   - Displays all mentors in the database.
 
-* Displays all Mentors in the database
+#### 3. **`/addmentor`**
+   - Add a new mentor to the database with the following details:
+     - **Mentor Name**
+     - **Mentor ID** (Primary Key)
+     - **Mentor Proficiency**
+     - **Email**
+     - **Experience**
+     - **Teaching Experience**
 
-*"/addmentor"*
+#### 4. **`/addstudent`**
+   - Add a new student to the database with the following details:
+     - **Student ID** (Primary Key)
+     - **Name**
+     - **Phone**
+     - **Degree**
+     - **Joinee** (new or already completed a course in the institution)
+     - **Previous Mentor ID** 
+     - **Mentor ID** (Student assigned to mentor)
 
-* Mentor Name
-* Mentor ID (Primary Key)
-* Mentor Proficiency
-* Email
-* Experience
-* Teaching_Exp
+#### 5. **Assigning Students to a Mentor**  
+   **`/assignstudent/:MentorID`**
+   - Assign students to a mentor based on course proficiency:
+     1. **Mentor ID** (Foreign Key)
+     2. Add Students:
+        - Displays all students with similar course proficiency as the mentor.
+        - Excludes students already assigned to a mentor.
 
-*"/addstudent*
+#### 6. **Changing Mentor for a Student**  
+   **`/changementor/:studentID`**
+   - Change the mentor for a particular student:
+     1. For a specific student ID, change the mentor by providing a new mentor ID.
+     2. Replace the existing mentor ID with the new one.
+     3. Push the existing mentor ID into the "Previous Mentor" field in the student's database record.
 
-* Student ID (Primary Key)
-* Name
-* Phone
-* Degree
-* Joinee (new or already completed a course in instituition)
-* Previous_Mentor (ID) 
-* Mentor id (Student assigned to mentor)
+#### 7. **Displaying Students for a Particular Mentor**  
+   **`/displaystudents/:mentorID`**
+   - Display students assigned to a specific mentor by matching the mentor ID in the student database.
 
-**Assigning Students to Mentor**
-*"/assignstudent/:MentorID"*
+#### 8. **Displaying Students Previously Assigned to a Mentor**  
+   **`/previousmentor/:studentID`**
+   - Display previously assigned mentors for a particular student.
 
-1. Mentor ID (Foreign Key)
-2. Add Students
-    - Display All Students with similar Course proficiency with the mentor
-    - Not to be displayed - Already assigned student
+## API URL
 
-**Changing Mentor for a Student**
-*"/changementor/:studentID"*
+Use the following base URL for all API endpoints:
 
-1. For Particular student ID - Change mentor by getting mentor ID 
-    - Replace the exsisting Mentor ID with the New 
-    - Push the exsisting Mentor ID into the Previous Mentor information in student DB 
+- **API URL:** [https://assign-mentor-rwbp.onrender.com](https://assign-mentor-rwbp.onrender.com)
 
-**Displaying Students for Particular Mentor**
-*"/displaystudents/:mentorID"*
+## Frontend
 
-1. Lookup the Params MentorID with the mentor id in the student DB
-    - Display the Students data
+Explore the frontend interface for this API:
 
-**Display Students who Assigned Previuos with a Mentor**
-*"/previousmentor/:studentID"*
+- **Visit Frontend:** [https://httdbadminpage.netlify.app](https://httdbadminpage.netlify.app)
+- **Frontend Source Code:** [GitHub Repository](https://github.com/Rajganez/frontendAssignMentor)
 
-1. Displaying previously assigned Mentor for a particular Student 
+## API Documentation
 
-## API URL:
+Run and test the API in Postman or view the detailed documentation:
 
-**Below API URL to use with above API endpoints**
-* https://assign-mentor-rwbp.onrender.com
-
-## Visit :
-
-*Front End for this API*
-
-**https://httdbadminpage.netlify.app/**
-
-*Front End Source Code Git-hub Link below*
-
-**https://github.com/Rajganez/frontendAssignMentor**
-
-## Run In PostMan or View:
-
-**https://documenter.getpostman.com/view/34103499/2sA3XWdycy**
+- **Postman Documentation:** [View Documentation](https://documenter.getpostman.com/view/34103499/2sA3XWdycy)
